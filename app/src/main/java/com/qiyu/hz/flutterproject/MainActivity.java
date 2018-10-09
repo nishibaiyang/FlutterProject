@@ -1,5 +1,6 @@
 package com.qiyu.hz.flutterproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -31,10 +32,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        GeneratedPluginRegistrant.registerWith(this);
         setContentView(R.layout.activity_main);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MainFragment())
+                .commit();
+        startActivity(new Intent(this,JumpFlutterActivity.class));
     }
 }
