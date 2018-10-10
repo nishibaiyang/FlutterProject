@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new MainFragment())
                 .commit();
-        startActivity(new Intent(this,JumpFlutterActivity.class));
+//        startActivity(new Intent(this,JumpFlutterActivity.class));
+        startActivity(new Intent(this,NewJumpFlutterActivity.class));
     }
 }
